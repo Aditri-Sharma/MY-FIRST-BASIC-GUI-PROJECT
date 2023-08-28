@@ -1,0 +1,20 @@
+from tkinter import *
+root=Tk()
+root.title("geeks for geeks")
+root.geometry("400x300")
+lbl=Label(root,text="are you geek?",foreground="red",background="yellow")
+lbl.grid()
+def clicked():
+    lbl.configure(text="i just got clicked")
+btn=Button(root,text="click me",command=clicked)
+btn.grid(column=2 , row=0)
+txt=Entry(root,text="hi")
+txt.grid(row=0,column=1)
+
+menu=Menu(root)
+item=Menu(menu)
+item.add_command(label="new")
+menu.add_cascade(label="file",menu=item)
+root.configure(menu=menu)
+
+root.mainloop()
